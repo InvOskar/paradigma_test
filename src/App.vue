@@ -14,11 +14,22 @@ export default {
 </script>
 
 <style lang="scss">
+:root{
+  --var-main-color: #1C1C1C;
+  --var-secondary-color: #F38120;
+  --var-third-color: #12C868;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('@/assets/font/Montserrat-VariableFont_wght.ttf');
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  color: #1C1C1C;
+  color: var(--var-main-color);
   font-family: 'Montserrat';
 }
 
@@ -32,6 +43,11 @@ export default {
 p {
   font-style: normal;
   font-weight: 400;
+}
+
+span{
+  font-style: normal;
+  font-weight: 600;
 }
 
 .flex-list {

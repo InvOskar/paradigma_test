@@ -24,7 +24,12 @@ p {
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
-    background-image: linear-gradient(to right, #F38120, #F38120 50%, #1C1C1C 50%);
+    background-image: linear-gradient(
+        to right, 
+        var(--var-secondary-color), 
+        var(--var-secondary-color) 50%, 
+        var(--var-main-color) 50%
+    );
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -36,7 +41,7 @@ p {
 
     &:before{
         content: '';
-        background: #F38120;
+        background: var(--var-secondary-color);
         display: block;
         position: absolute;
         bottom: 2px;
