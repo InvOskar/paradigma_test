@@ -5,15 +5,18 @@
             <p><span>Пн-Пт</span> 9:00 - 18:00, <span>Сб</span> 10:00 - 18:00</p>
         </div>
         <p class="phone-number">8 (800) 222-54-60</p>
-        <p class="bottom-text pulse-animation"><span style="color: var(--var-third-color);">Позвоните мне</span></p>
+        <p class="bottom-text pulse-animation"><span style="color: var(--var-third-color);" @click="setPopUp(true)">Позвоните мне</span></p>
     </div>
 </template>
 
 <script>
 import LittleDot from '../UI/LittleDot.vue'
+import { mapActions } from 'vuex'
 export default {
-  components: { LittleDot },
-
+    components: { LittleDot },
+    methods: {
+        ...mapActions(['setPopUp']),
+    }
 }
 </script>
 

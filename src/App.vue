@@ -1,14 +1,23 @@
 <template>
   <div class="app">
-    <main-page />
+    <main-page v-if="!popUp"/>
+    <div class="pop-up-bg" v-if="popUp">
+      <img src="@/assets/images/BG.png" alt="bg" />
+    </div>
+    <the-pop-up v-if="popUp"/>
   </div>
 </template>
 
 <script>
 import MainPage from "./views/MainPage.vue";
+import ThePopUp from "./components/ThePopUp.vue";
+import { mapGetters } from "vuex";
 
 export default {
-  components: { MainPage }
+  components: { MainPage, ThePopUp },
+  computed: {
+    ...mapGetters(["popUp"])
+  },
 }
 
 </script>
@@ -79,5 +88,14 @@ span{
   100% {
     transform: scale(1.5);
   }
+}
+
+.pop-up-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(10px);
 }
 </style>
