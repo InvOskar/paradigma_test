@@ -2,15 +2,17 @@
     <div class="main">
         <the-nav-bar />
         <the-header />
+        <the-content />
     </div>
 </template>
 
 <script>
 import TheNavBar from '@/components/TheNavBar.vue'
 import TheHeader from '@/components/TheHeader.vue'
+import TheContent from '@/components/TheContent.vue'
 
 export default {
-  components: { TheNavBar, TheHeader },
+  components: { TheNavBar, TheHeader, TheContent },
 
 }
 </script>

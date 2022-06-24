@@ -1,6 +1,6 @@
 <template>
-    <div class="button flex-list" :style="{background: color}">
-        <p>{{ text }}</p>
+    <div class="button flex-list" :style="{background: color, width: width}">
+        <p><slot></slot></p>
         <img src="@/assets/svg/arrow.svg" alt="->">
     </div>
 </template>
@@ -8,14 +8,14 @@
 <script>
 export default {
     props: {
-        text: {
-            type:  String,
-            required: true,
-        },
         color: {
             type: String,
             required: true,
-        }
+        },
+        width: {
+            type: String,
+            required: true,
+        },
     },
     
 }
@@ -25,12 +25,12 @@ export default {
 .button{
     justify-content: space-evenly;
 
-    width: 335px;
     height: 100px;
     border-radius: 500px;
     box-shadow: inset 0px 0px 22px rgba(255, 255, 255, 0.25);
 }
 p{
+    width: 57%;
     font-weight: 600;
     font-size: 14px;
     line-height: 22px;

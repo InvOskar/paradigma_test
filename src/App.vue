@@ -33,6 +33,10 @@ export default {
   font-family: 'Montserrat';
 }
 
+body{ 
+  overflow-x: hidden;
+}
+
 .app {
   width: 100vw;
   min-height: 100vh;
