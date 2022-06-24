@@ -79,6 +79,12 @@ export default {
         padding-bottom: 15px;
 
     }
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.3) translateY(10px);
+        transition: all 0.5s ease-in-out;
+    }
 }
 .bold{
     font-weight: 700;

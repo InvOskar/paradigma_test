@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex-list">
+    <div class="content">
         <bullets-block />
         <main-content />
     </div>
@@ -15,7 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container{
-  
+.content{
+  display: flex;
+  gap: 70px;
 }
 </style>

@@ -28,6 +28,11 @@ export default {
     height: 100px;
     border-radius: 500px;
     box-shadow: inset 0px 0px 22px rgba(255, 255, 255, 0.25);
+
+    &:hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
 }
 p{
     width: 57%;

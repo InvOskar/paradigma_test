@@ -2,7 +2,7 @@
     <div class="social">
         <div class="text flex-list">
             <little-dot :color="'var(--var-third-color)'" />
-            <p>Отвечаем онлайн</p>
+            <p>Отвечаем <span>онлайн</span></p>
         </div>
         <div class="flex-list">
             <img v-for="social in socials"

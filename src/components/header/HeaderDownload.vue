@@ -1,7 +1,7 @@
 <template>
     <div class="download flex-list">
-        <div class="icon"><span>Pdf</span></div>
-        <p>Скачать прайс-каталог</p>
+        <div class="icon pulse-animation"><span>Pdf</span></div>
+        <p><span>Скачать прайс-каталог</span></p>
     </div>
 </template>
 
@@ -23,6 +23,10 @@ export default {
         letter-spacing: 0.04em;
 
         border-bottom: 1px dotted var(--var-third-color);
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 .icon{

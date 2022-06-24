@@ -1,7 +1,5 @@
 <template>
-    <div class="logo">
-        <img src="@/assets/images/Logo.png" alt="Logo">
-    </div>
+    <img src="@/assets/images/Logo.png" alt="logo" class="logo" />
 </template>
 
 <script>
@@ -12,7 +10,7 @@ export default {
 
 <style lang="scss" scoped>
 .logo{
-    height: 148px;
-    padding-top: 1px;
+    position: relative;
+    top: 25px;
 }
 </style>

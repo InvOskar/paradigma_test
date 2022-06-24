@@ -1,10 +1,13 @@
 <template>
-    <div class="container flex-list">
-        <header-text />
-        <header-download />
-        <header-logo />
-        <header-social />
-        <header-contacts />
+    <div class="container">
+        <header-line />
+        <div class="flex-list header">
+            <header-text />
+            <header-download />
+            <header-logo />
+            <header-social />
+            <header-contacts />
+        </div>
     </div>
 </template>
 
@@ -14,6 +17,7 @@ import HeaderText from './header/HeaderText.vue'
 import HeaderDownload from './header/HeaderDownload.vue'
 import HeaderContacts from './header/HeaderContacts.vue'
 import HeaderSocial from './header/HeaderSocial.vue'
+import HeaderLine from './header/HeaderLine.vue'
 
 export default {
     components: {
@@ -21,15 +25,18 @@ export default {
         HeaderText,
         HeaderDownload,
         HeaderContacts,
-        HeaderSocial
+        HeaderSocial,
+        HeaderLine
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .container{
-    border-top: 1px solid rgba(28, 28, 28, 0.07);
     margin-top: 37px;
+    height: 150px;
+}
+.header{
     height: 148px;
 }
 </style>

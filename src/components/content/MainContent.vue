@@ -4,15 +4,15 @@
             Продажа <span>кровельных материалов</span> в Тюмени и Тюменской области
         </p>
         <div class="subtitle flex-list">
-            <div class="flex-list">
+            <div class="flex-list dots">
                 <div class="dot"
                     v-for="i in 4"
                     :key="i" 
-                    :style="{border: '1.5px solid rgba(18, 200, 104, ' + 1-((i-1)*0.25) + ');'}"></div>
+                    :style="{borderColor: 'rgba(18, 200, 104, ' + (1-((i-1)*0.25)) + ')'}"></div>
             </div>
             <p>и монтаж под ключ</p>
         </div>
-        <div class="btns">
+        <div class="flex-list">
             <main-button :color="'var(--var-third-color)'" :width="'375px'">
                 Рассчитать стоимость материалов и монтажа
             </main-button>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-const { default: MainButton }=require("../UI/MainButton.vue");
+import MainButton from "../UI/MainButton.vue";
 
 export default {
   components: { MainButton }, 
@@ -53,10 +53,33 @@ export default {
     width: 54.5%;
     font-size: 32px;
     line-height: 39px;
+
+    padding-top: 19px;
+    padding-bottom: 45px;
+}
+.dots{
+    width: 58px;
 }
 .dot{
     width: 9.21px;
     height: 9.21px;
     border-radius: 50%;
+
+    border: 1.5px solid;
+}
+.block{
+    margin-top: 36px;
+    width: 276px;
+    display: flex;
+    gap: 16px;
+    
+    &>p{
+        font-size: 14px;
+        line-height: 22px;
+        /* or 157% */
+
+        text-align: center;
+        letter-spacing: 0.02em;
+    }
 }
 </style>
