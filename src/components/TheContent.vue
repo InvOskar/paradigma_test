@@ -19,4 +19,12 @@ export default {
   display: flex;
   gap: 70px;
 }
+
+@media (max-width: 700px){
+  .content{
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+}
 </style>

@@ -60,4 +60,16 @@ p {
         width: 100%;
     }
 }
+
+@media (max-width: 900px) {
+    p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 700px) {
+    p {
+        font-size: 10px;
+    }
+}
 </style>

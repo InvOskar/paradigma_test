@@ -28,4 +28,10 @@ export default {
         line-height: 20px;
     }
 }
+
+@media (max-width: 1000px){
+    .text{
+        width: auto;
+    }    
+}
 </style>

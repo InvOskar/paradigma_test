@@ -23,4 +23,10 @@ export default {
     width: 81.77%;
     padding-top: 43px;
 }
+
+@media (max-width: 1500px){
+    .main{
+        width: 98%;
+    }
+}
 </style>

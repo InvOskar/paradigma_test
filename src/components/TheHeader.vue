@@ -3,9 +3,9 @@
         <header-line />
         <div class="flex-list header">
             <header-text />
-            <header-download />
+            <header-download v-if="windowWidth > 1000"/>
             <header-logo />
-            <header-social />
+            <header-social v-if="windowWidth > 1000"/>
             <header-contacts />
         </div>
     </div>
@@ -27,7 +27,18 @@ export default {
         HeaderContacts,
         HeaderSocial,
         HeaderLine
-    }
+    },
+    data(){
+        return {
+            windowWidth: null,
+        }
+    },
+    mounted() {
+        this.windowWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            this.windowWidth = window.innerWidth;
+        });
+    },
 }
 </script>
 
@@ -38,5 +49,11 @@ export default {
 }
 .header{
     height: 148px;
+}
+
+@media (max-width: 1000px) {
+    .header{
+        justify-content: space-evenly;
+    }
 }
 </style>

@@ -22,7 +22,10 @@ export default {
         text-align: center;
         letter-spacing: 0.04em;
 
-        border-bottom: 1px dotted var(--var-third-color);
+        text-decoration: underline;
+        text-decoration-color: var(--var-third-color);
+        text-decoration-style: dotted;
+        // 1px dotted var(--var-third-color);
 
         &:hover{
             cursor: pointer;
@@ -51,5 +54,11 @@ export default {
 
         margin-top: 15px;
     }
+}
+
+@media (max-width: 1100px){
+    .download{
+        flex-direction: column;
+    }    
 }
 </style>

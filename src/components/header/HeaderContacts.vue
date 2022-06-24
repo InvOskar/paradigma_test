@@ -50,4 +50,11 @@ p{
     color: var(--var-third-color);
     border-bottom: 1px dotted var(--var-third-color);
 }
+
+@media (max-width: 1000px) {
+    .contacts{
+        width: auto;
+    }
+    
+}
 </style>

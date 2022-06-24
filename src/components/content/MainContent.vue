@@ -12,7 +12,7 @@
             </div>
             <p>и монтаж под ключ</p>
         </div>
-        <div class="flex-list">
+        <div class="flex-list btns">
             <main-button :color="'var(--var-third-color)'" :width="'375px'">
                 Рассчитать стоимость материалов и монтажа
             </main-button>
@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-    width: 46.37%;
+    width: 728px;
 }
 .text{
     width: 88.6%;
@@ -81,5 +81,47 @@ export default {
         text-align: center;
         letter-spacing: 0.02em;
     }
+}
+
+@media (max-width: 1100px){
+    .container{
+        width: 70%;
+    }
+    .subtitle{
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 1000px){
+    .btns{
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+    .block{
+        padding-top: 24px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 850px){
+    .subtitle, .text{
+        width: 90%;
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .text{
+        font-size: 42px;
+        line-height: 60px;
+    }
+    .subtitle{
+        font-size: 28px;
+        line-height: 36px;
+    }
+    
 }
 </style>
