@@ -7,14 +7,14 @@
             <p class="description">Пн–Пт 9:00 - 18:00, Сб 10:00 - 18:00</p>
             <div class="number-input">
                 <p class="description">Введите номер телефона</p>
-                <input placeholder="+7 (_ _ _) _ _-_ _-_ _"/>
+                <input type="tel" placeholder="+7 (_ _ _) _ _ _-_ _-_ _" v-model="phone" @focus="onFocus"/>
             </div>
-            <div class="btn flex-list">
+            <div class="button flex-list" @click="sendPhone()">
                 <p>Позвони мне</p>
                 <img src="@/assets/svg/arrow.svg" alt="arrow" />
             </div>
             <div class="condition flex-list">
-                <check-box />
+                <check-box v-model="isAccept"/>
                 <p>Нажимая кнопку вы соглашаетесь  с условиями <br>
                 <span>Политики конфиденциальности</span></p>
             </div>
@@ -28,8 +28,42 @@ import CheckBox from "@/components/UI/CheckBox.vue";
 import { mapActions } from "vuex";
 export default {
     components: { CloseButton, CheckBox },
+    data() {
+        return {
+            phone: null,
+            isAccept: false,
+        }
+    },
     methods: {
-        ...mapActions(["setPopUp"])
+        ...mapActions(["setPopUp"]),
+        sendPhone() {
+            if (this.isAccept && this.phone.length==16) {
+                this.setPopUp(false);
+                alert("Заявка отправлена, мы скоро свяжемся с вами по номеру телефона: " + this.phone);
+            }
+        },
+        onFocus() {
+            this.phone = '+7';
+        }
+    },
+    watch: {
+        phone(newValue) {
+            if (newValue.length > 0) {
+                this.phone = newValue.replace(/[^\d+_()-]/g, '');
+            }
+            if(newValue.length == 2){
+                this.phone += '(';
+            }
+            if(newValue.length == 6){
+                this.phone += ')';
+            }
+            if(newValue.length == 10 || newValue.length == 13){
+                this.phone += '-';
+            }
+            if(newValue.length > 16){
+                this.phone = newValue.slice(0, 16);
+            }
+        }
     }
 }
 </script>
@@ -46,6 +80,9 @@ export default {
     transform: translate(-50%, -50%);
 
     border-radius: 35px;
+    
+    text-align: center;
+    font-weight: 400;
 }
 .content{
     padding: 70px 97px 93px;
@@ -54,26 +91,17 @@ export default {
     font-weight: 500;
     font-size: 30px;
     line-height: 30px;
-    /* or 100% */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.02em;
 }
 .subtitle{
-    font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    /* or 150% */
 
-    text-align: center;
     color: #000000;
 
     margin-top: 14px;
 }
 .description{
-    font-weight: 400;
     font-size: 12px;
     line-height: 15px;
     /* identical to box height */
@@ -122,35 +150,12 @@ export default {
         }
     }
 }
-.btn{
+.button{
     width: 356px;
     height: 85px;
 
-    margin-top: 24px;
-
-    justify-content: space-evenly;
-    box-shadow: inset 0px 0px 22px rgba(255, 255, 255, 0.25);
     background: var(--var-secondary-color);
-    border-radius: 500px;
-
-    &:hover{
-        opacity: 0.8;
-        cursor: pointer;
-    }
-
-    &>p{
-        width: 57%;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 22px;
-        /* or 157% */
-
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
-
-        color: #FFFFFF;
-    }
+    margin-top: 24px;
 
     &>img{
         transform: rotate(45deg);
@@ -161,13 +166,16 @@ export default {
     padding-left: 20px;
     gap: 19px;
 
+    text-align: left;
+
     &>p{
         font-weight: 500;
         font-size: 12px;
         line-height: 21px;
 
         &>span{
-            color: var(--var-secondary-color)
+            color: var(--var-secondary-color);
+            cursor: pointer;
         }
     }
 }
