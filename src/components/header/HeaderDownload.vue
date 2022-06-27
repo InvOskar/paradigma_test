@@ -61,4 +61,17 @@ export default {
         flex-direction: column;
     }    
 }
+
+@media (max-width: 600px) {
+    .download{
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 400px) {
+    .download>p{
+        font-size: 10px;
+    }
+}
 </style>

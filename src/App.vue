@@ -125,4 +125,23 @@ span{
   }
 }
 
+@media (max-width: 1000px) {
+  .app{
+    background: url("@/assets/images/MobileBG.png");
+    background-size: cover;
+    background-color: #EDF2F5;
+  }
+  
+}
+
+@media (max-width: 600px){
+  .button{
+    height: 60px;
+    &>p{
+      font-size: 10px;
+      line-height: 16px;
+      width: 60%;
+    }
+  }
+}
 </style>

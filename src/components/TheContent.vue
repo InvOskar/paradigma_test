@@ -25,6 +25,8 @@ export default {
     flex-direction: column-reverse;
     align-items: center;
     padding-bottom: 50px;
+    gap: 0;
   }
 }
+
 </style>

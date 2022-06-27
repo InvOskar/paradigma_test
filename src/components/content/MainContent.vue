@@ -12,20 +12,39 @@
             </div>
             <p>и монтаж под ключ</p>
         </div>
-        <div class="flex-list btns">
-            <main-button :color="'var(--var-third-color)'" :width="'375px'">
-                Рассчитать стоимость материалов и монтажа
-            </main-button>
-            <main-button :color="'var(--var-secondary-color)'" :width="'335px'">
-                записаться на просмотр объектов
-            </main-button>
+        <div v-if="windowWidth > 600">
+            <div class="flex-list btns">
+                <main-button :color="'var(--var-third-color)'" :width="'375px'">
+                    Рассчитать стоимость материалов и монтажа
+                </main-button>
+                <main-button :color="'var(--var-secondary-color)'" :width="'335px'">
+                    записаться на просмотр объектов
+                </main-button>
+            </div>
+            <div class="block">
+                <div class="pointer"><img src="@/assets/svg/pointer.svg" alt="pointer" /></div>
+                <p>
+                    <span>Ответьте на несколько вопросов и получите</span>
+                    сметную стоимость и 3 подарка за экономию нашего времени
+                </p>
+            </div>
         </div>
-        <div class="block">
-            <div class="pointer"><img src="@/assets/svg/pointer.svg" alt="pointer" /></div>
-            <p>
-                <span>Ответьте на несколько вопросов и получите</span>
-                 сметную стоимость и 3 подарка за экономию нашего времени
-            </p>
+        <div v-else>
+            <div class="block">
+                <div class="pointer"><img src="@/assets/svg/pointer.svg" alt="pointer" /></div>
+                <p>
+                    <span>Ответьте на несколько вопросов и получите</span>
+                    сметную стоимость и 3 подарка за экономию нашего времени
+                </p>
+            </div>
+            <div class="flex-list btns">
+                <main-button :color="'var(--var-third-color)'" :width="'100%'">
+                    Рассчитать стоимость материалов и монтажа
+                </main-button>
+                <main-button :color="'var(--var-secondary-color)'" :width="'100%'">
+                    записаться на просмотр объектов
+                </main-button>
+            </div>
         </div>
     </div>
 </template>
@@ -34,8 +53,18 @@
 import MainButton from "../UI/MainButton.vue";
 
 export default {
-  components: { MainButton }, 
-
+    components: { MainButton }, 
+    data(){
+        return {
+            windowWidth: null,
+        }
+    },
+    mounted() {
+        this.windowWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            this.windowWidth = window.innerWidth;
+        });
+    },
 }
 </script>
 
@@ -76,7 +105,6 @@ export default {
     &>p{
         font-size: 14px;
         line-height: 22px;
-        /* or 157% */
 
         text-align: center;
         letter-spacing: 0.02em;
@@ -123,5 +151,62 @@ export default {
         line-height: 36px;
     }
     
+}
+
+@media (max-width: 600px){
+    .container{
+        width: 100%;
+        margin: auto;
+        padding-top: 34px;
+    }
+    .subtitle, .text{
+        margin: auto;
+    }
+    .text{
+        font-size: 22px;
+        line-height: 35px;
+    }
+    .subtitle{
+        font-size: 16px;
+        line-height: 24px;
+        width: 70%;
+        padding-bottom: 0;
+    }
+    .block{
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 12px;
+
+        &>p{
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+    .pointer>img{
+        width: 20px;
+    }
+    .btns{
+        gap: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .text{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .subtitle{
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .block>p{
+        font-size: 8px;
+        line-height: 12px;
+    }
+    .pointer>img{
+        width: 13px;
+    }
 }
 </style>

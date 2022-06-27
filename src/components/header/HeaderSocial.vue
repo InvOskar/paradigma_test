@@ -43,4 +43,17 @@ p{
     line-height: 15px;
     letter-spacing: 0.02em;
 }
+
+@media (max-width: 600px) {
+    .social{
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .social{
+        font-size: 8px;
+        line-height: 9.75px;
+    }
+}
 </style>

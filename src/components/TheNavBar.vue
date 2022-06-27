@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-list">
+    <div class="flex-list nav-list">
         <img src="@/assets/svg/home.svg" alt="home" class="pulse-animation">
         <p v-for="item in list" :key="item">{{ item }}</p>
     </div>
@@ -68,6 +68,24 @@ p {
 }
 
 @media (max-width: 700px) {
+    p {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-list{
+        padding-top: 24px;
+        padding-bottom: 16px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
     p {
         font-size: 10px;
     }

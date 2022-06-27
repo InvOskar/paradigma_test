@@ -89,4 +89,10 @@ export default {
 .bold{
     font-weight: 700;
 }
+
+@media (max-width: 600) {
+    .container{
+        margin-top: 0;
+    }
+}
 </style>
